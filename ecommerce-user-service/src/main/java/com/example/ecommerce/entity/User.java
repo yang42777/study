@@ -1,4 +1,4 @@
-package com.example.ecommerce.user.entity;
+package com.example.ecommerce.entity;
 
 public class User {
     private Long id;

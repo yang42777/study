@@ -1,8 +1,8 @@
-package com.example.ecommerce.user.dao;
+package com.example.ecommerce.dao;
 
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.example.ecommerce.user.entity.User;
+import com.example.ecommerce.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

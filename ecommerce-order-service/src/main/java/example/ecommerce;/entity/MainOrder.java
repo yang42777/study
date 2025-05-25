@@ -32,7 +32,7 @@ public class MainOrder implements Serializable {
 
     private Long userId;
 
-    private BigDecimal totalAmount;
+    private Integer totalAmount;
 
     private Byte status;
 

@@ -1,0 +1,69 @@
+version: '3.8'
+services:
+
+  mysql:
+    image: mysql:5.7.43
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: ecommerce
+      MYSQL_USER: ecommerce_user
+      MYSQL_PASSWORD: ecommerce_pwd
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  redis:
+    image: redis:7
+    container_name: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+
+  zookeeper:
+    image: zookeeper:3.8
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+
+  rocketmq-namesrv:
+    image: apache/rocketmq:5.1.4
+    container_name: rmq-namesrv
+    ports:
+      - "9876:9876"
+    command: sh mqnamesrv
+    volumes:
+      - ./rocketmq/logs:/root/logs
+      - ./rocketmq/store:/root/store
+
+  rocketmq-broker:
+    image: apache/rocketmq:5.1.4
+    container_name: rmq-broker
+    depends_on:
+      - rocketmq-namesrv
+    ports:
+      - "10911:10911"
+      - "10909:10909"
+    command: sh mqbroker -n rocketmq-namesrv:9876 -c /opt/rocketmq/broker.conf
+    volumes:
+      - ./rocketmq/conf/broker.conf:/opt/rocketmq/broker.conf
+      - ./rocketmq/logs:/root/logs
+      - ./rocketmq/store:/root/store
+    environment:
+      - "JAVA_OPT_EXT=-Xms512m -Xmx512m -Xmn256m"
+
+  rocketmq-console:
+    image: styletang/rocketmq-console-ng
+    container_name: rmq-console
+    ports:
+      - "8081:8080"
+    environment:
+      - JAVA_OPTS=-Drocketmq.namesrv.addr=rocketmq-namesrv:9876 -Dcom.rocketmq.sendMessageWithVIPChannel=false
+
+volumes:
+  mysql_data:
+  redis_data:

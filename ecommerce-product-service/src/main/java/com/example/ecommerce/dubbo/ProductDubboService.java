@@ -2,7 +2,7 @@ package com.example.ecommerce.dubbo;
 
 import com.example.ecommerce.entity.Product;
 
-public interface ProductService {
+public interface ProductDubboService {
 
     boolean checkStock(Long productId, Integer quantity);
 

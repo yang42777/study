@@ -1,16 +1,13 @@
-package com.example.ecommerce.entity
-
--product-service.entity;
+package com.example.ecommerce.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import lombok.Getter;
-import lombok.Setter;
+
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
 
 /**
  * <p>
@@ -20,9 +17,8 @@ import lombok.Setter;
  * @author zfy
  * @since 2025-05-19
  */
-@Getter
-@Setter
-@ApiModel(value = "Product对象", description = "")
+@Data
+@TableName("product")
 public class Product implements Serializable {
 
     private static final long serialVersionUID = 1L;

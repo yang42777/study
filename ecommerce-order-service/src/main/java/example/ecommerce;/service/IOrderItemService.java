@@ -1,7 +1,8 @@
-package com.example.ecommerce;.service;
+package com.example.ecommerce.service;
 
-import com.example.ecommerce;.entity.OrderItem;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.example.ecommerce.entity.MainOrder;
+import com.example.ecommerce.entity.OrderItem;
 
 /**
  * <p>

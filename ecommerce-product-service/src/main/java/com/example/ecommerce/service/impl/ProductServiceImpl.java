@@ -1,11 +1,9 @@
-package com.example.ecommerce.service.impl
+package com.example.ecommerce.service.impl;
 
--product-service.service.impl;
-
-import com.example.ecommerce.ecommerce-product-service.entity.Product;
-import com.example.ecommerce.ecommerce-product-service.mapper.ProductMapper;
-import com.example.ecommerce.ecommerce-product-service.service.IProductService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.example.ecommerce.entity.Product;
+import com.example.ecommerce.mapper.ProductMapper;
+import com.example.ecommerce.service.IProductService;
 import org.springframework.stereotype.Service;
 
 /**

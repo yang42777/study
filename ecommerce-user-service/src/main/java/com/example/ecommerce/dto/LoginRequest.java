@@ -1,4 +1,4 @@
-package com.example.ecommerce.user.dto;
+package com.example.ecommerce.dto;
 
 public class LoginRequest {
     private String username;

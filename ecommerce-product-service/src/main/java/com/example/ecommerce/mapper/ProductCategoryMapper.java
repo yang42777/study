@@ -1,9 +1,8 @@
-package com.example.ecommerce.mapper
+package com.example.ecommerce.mapper;
 
--product-service.mapper;
-
-import com.example.ecommerce.ecommerce-product-service.entity.ProductCategory;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.example.ecommerce.entity.ProductCategory;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -13,6 +12,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author zfy
  * @since 2025-05-19
  */
+@Mapper
 public interface ProductCategoryMapper extends BaseMapper<ProductCategory> {
 
 }

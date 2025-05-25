@@ -1,13 +1,13 @@
 package com.example.ecommerce.dubbo.impl;
 
 import com.example.ecommerce.config.SpringContext;
-import com.example.ecommerce.dubbo.ProductService;
+import com.example.ecommerce.dubbo.ProductDubboService;
 import com.example.ecommerce.entity.Product;
 import com.example.ecommerce.service.IProductService;
 import org.apache.dubbo.config.annotation.DubboService;
 
 @DubboService
-public class ProductServiceImpl implements ProductService {
+public class ProductDubboServiceImpl implements ProductDubboService {
 
     private IProductService productService = SpringContext.getBean(IProductService.class);
 

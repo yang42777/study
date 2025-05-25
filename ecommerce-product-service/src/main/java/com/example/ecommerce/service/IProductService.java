@@ -1,9 +1,7 @@
-package com.example.ecommerce.service
+package com.example.ecommerce.service;
 
--product-service.service;
-
-import com.example.ecommerce.ecommerce-product-service.entity.Product;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.example.ecommerce.entity.Product;
 
 /**
  * <p>

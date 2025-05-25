@@ -1,4 +1,4 @@
-package com.example.ecommerce.common.utils;
+package com.example.ecommerce.utils;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 

@@ -1,10 +1,10 @@
-package com.example.ecommerce.common.interceptor;
+package com.example.ecommerce.interceptor;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
-import com.example.ecommerce.common.utils.JwtUtil;
+import com.example.ecommerce.utils.JwtUtil;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

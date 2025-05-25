@@ -12,13 +12,6 @@ spring:
     host: localhost
     port: 6379
 
-  rocketmq:
-    nameServer: 127.0.0.1:9876   # 你的RocketMQ NameServer地址
-    producer:
-      group: order_producer_group
-    consumer:
-      group: order_consumer_group
-
   messages:
     basename: messages
     encoding: UTF-8
@@ -27,6 +20,13 @@ server:
   servlet:
     context-path: /ecommerce # 设置应用的上下文路径，所有接口前面会自动加这个前缀（Base URL）
   port: 8083
+
+rocketmq:
+  nameServer: 127.0.0.1:9876   # 你的RocketMQ NameServer地址
+  producer:
+    group: order_producer_group
+  consumer:
+    group: order_consumer_group
 
 
 mybatis-plus:
